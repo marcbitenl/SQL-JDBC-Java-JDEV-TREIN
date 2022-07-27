@@ -1,13 +1,23 @@
 import org.junit.Test;
 
-import conexaojdbcc.SingleConnection;
+import daoo.UserPosDAO;
+import modell.Userposjava;
 
 public class TesteBancoJdbc {
 	
 	
 	@Test
 	public void initBanco() {
-		SingleConnection.getConnection();
+		UserPosDAO userPosDAO = new UserPosDAO();
+		Userposjava userposjava = new Userposjava();
+		
+		userposjava.setId(5L);
+		userposjava.setNome("Marcos teste");
+		userposjava.setEmail("marcos@gmail.com");
+		
+		
+		userPosDAO.salvar(userposjava);
+		                                      
 	}
 
 }
